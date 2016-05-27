@@ -1,5 +1,7 @@
 package com.android.meiko;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +18,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static void start(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     // 广告数据
-    public static List<String> getAdData() {
-        List<String> adList = new ArrayList<>();
-        adList.add("http://imgsrc.baidu.com/baike/pic/item/1f5694823d0920aef603a6ec.jpg");
-        adList.add("http://c.hiphotos.baidu.com/zhidao/pic/item/95eef01f3a292df59ac3846ebc315c6034a8734c.jpg");
-        adList.add("http://img0.imgtn.bdimg.com/it/u=1296117362,655885600&fm=21&gp=0.jpg");
+    public static List<Integer> getAdData() {
+        List<Integer> adList = new ArrayList<>();
+        adList.add(R.mipmap.guide_bg1);
+        adList.add(R.mipmap.guide_bg2);
+        adList.add(R.mipmap.guide_bg3);
         return adList;
     }
 }
