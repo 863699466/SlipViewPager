@@ -28,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SwipeViewPager mSwipeView = (SwipeViewPager) findViewById(R.id.swip_viewpage);
+        //初始化PageAdapter 根据自己的需求自定义样式
         CustomViewPageAdapter adapter = new CustomViewPageAdapter(this, getAdData());
-        if (mSwipeView != null) {
-            mSwipeView.updateIndicatorView(getAdData().size());
-            mSwipeView.setAdapter(adapter);
-            mSwipeView.startScorll();
-        }
+
+        //初始化 轮播图指示点
+        mSwipeView.updateIndicatorView(getAdData().size());
+        mSwipeView.setAdapter(adapter);
+        //广告图开启滚动功能
+        mSwipeView.startScorll();
     }
 
 
